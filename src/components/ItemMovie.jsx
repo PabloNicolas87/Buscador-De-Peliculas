@@ -1,10 +1,9 @@
-import DefaultImage from "/NoImage.png";
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
+import DefaultImage from '/NoImage.png';
+import { Link } from 'react-router-dom';
 
 const ItemMovie = ({ id, title, type, year, poster }) => {
-
-    let image = poster === "N/A" ? DefaultImage : poster;
+    const image = poster === "N/A" ? DefaultImage : poster;
 
     return (
         <Link to = {`/movies/${id}`} style={{ textDecoration: "inherit", color: "inherit"}}>
@@ -18,14 +17,14 @@ const ItemMovie = ({ id, title, type, year, poster }) => {
             </article>
         </Link>
     );
-}
+};
 
 ItemMovie.propTypes = {
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     year: PropTypes.string.isRequired,
-    poster: PropTypes.string.isRequired
+    poster: PropTypes.string.isRequired,
 };
 
 export default ItemMovie;

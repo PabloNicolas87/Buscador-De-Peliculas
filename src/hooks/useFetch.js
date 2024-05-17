@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-const API_ENDPOINT = 'https://www.omdbapi.com/?apikey=85a513b&s=';
+const API_ENDPOINT = 'https://www.omdbapi.com/?apikey=85a513b&s=';  // Corrected endpoint
 
 export const useFetch = (params) => {
     const [isLoading, setIsLoading] = useState(true);
@@ -13,14 +13,13 @@ export const useFetch = (params) => {
             .then(respuesta => respuesta.json())
             .then(respuestaJson => {
                 if (respuestaJson.Response === "True") {
-                    setData( respuestaJson);
+                    setData(respuestaJson);
                     setError(false);
                 } else {
                     setError(true);
-                    setData(null); 
+                    setData(null);
                 }
                 setIsLoading(false);
-                console.log(respuestaJson);
             })
             .catch(error => {
                 console.log(error);

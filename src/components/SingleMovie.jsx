@@ -4,7 +4,7 @@ import DefaultImage from "/NoImage.png";
 
 const SingleMovie = () => {
     const { id }  = useParams();
-    const { isLoading, error, data } = useFetch(`&i=${id}`)
+    const { isLoading, data } = useFetch(`&i=${id}`)
 
     if (isLoading) {
         return <div className="loading"></div>
